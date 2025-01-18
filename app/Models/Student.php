@@ -2,29 +2,32 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-use Illuminate\Auth\Authenticatable;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Student extends Model implements AuthenticatableContract
+class Student extends Authenticatable
 {
-    use HasFactory, Authenticatable;
+    use Notifiable, SoftDeletes;
 
     protected $fillable = [
-        'name',
         'email',
         'student_id',
-        'program',
         'year_section',
+        'program',
+        'name',
         'gender',
         'birthday',
-        'contact_number',
         'password',
+        'contact_number',
     ];
 
     protected $hidden = [
         'password',
         'remember_token',
+    ];
+
+    protected $dates = [
+        'deleted_at',
     ];
 }

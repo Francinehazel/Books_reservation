@@ -45,9 +45,16 @@
                         <span class="error-message">{{ $message }}</span>
                     @enderror
 
+                    <!-- Throttling Error Message -->
+                    @if (session('throttle'))
+                        <div class="error-message">
+                            {{ session('throttle') }}
+                        </div>
+                    @endif
+
                     <!-- Forgot Password Link -->
                     <p class="forgot-password">
-                        <a href="{{ route('password.request') }}">Forgot Password?</a>
+                        <a href="{{ route('student.password.request') }}">Forgot Password?</a>
                     </p>
 
                     <button type="submit" class="login-btn">Log In</button>

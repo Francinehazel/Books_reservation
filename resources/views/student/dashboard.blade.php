@@ -17,6 +17,7 @@
         </div>
 
         <div class="header-icons">
+        <button class="profile" onclick="window.location.href='{{ route('student.user-management') }}';">👤</button>
             <form method="POST" action="{{ route('student.logout') }}">
                 @csrf
                 <button type="submit" class="logout-btn">Log out</button>

@@ -14,6 +14,7 @@
       <button class="clear-btn">✖</button>
     </div>
     <div class="header-icons">
+    <button class="profile" onclick="window.location.href='{{ route('admin.user-management') }}';">👤</button>
       <!-- Logout Button -->
       <form method="POST" action="{{ route('admin.logout') }}" style="display: inline;">
         @csrf

@@ -24,6 +24,7 @@ class CreateStudentsTable extends Migration
             $table->string('contact', 11)->nullable(false)->change();
             $table->string('password'); // Hashed password
             $table->timestamps();
+            $table->softDeletes();
         });
 
         // Add constraints using raw SQL
